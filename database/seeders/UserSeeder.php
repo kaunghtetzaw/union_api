@@ -19,28 +19,28 @@ class UserSeeder extends Seeder
             [
                 'name' => 'Admin',
                 'email' => 'admin@mail.com',
-                'password' => Hash::make('123'),
+                'password' => Hash::make('12345678'),
                 'role' => 'admin',
             ],
             // M&E Manager
             [
                 'name' => 'M&E Manager',
                 'email' => 'm&emanager@mail.com',
-                'password' => Hash::make('123'),
-                'role' => 'm&e manager',
+                'password' => Hash::make('12345678'),
+                'role' => 'm&e_manager',
             ],
             // Project manager
             [
                 'name' => 'Project manager',
                 'email' => 'progjectmanager@mail.com',
-                'password' => Hash::make('123'),
-                'role' => 'project manager',
+                'password' => Hash::make('12345678'),
+                'role' => 'project_manager',
             ],
             // Volunteer
             [
                 'name' => 'Volunteer',
                 'email' => 'volunteer@mail.com',
-                'password' => Hash::make('123'),
+                'password' => Hash::make('12345678'),
                 'role' => 'volunteer',
             ]
         ]);

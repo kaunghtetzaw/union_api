@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text("address");
             $table->date("treatment_start_date");
             $table->boolean("vot");
+            $table->unsignedBigInteger("user_id");
             $table->timestamps();
         });
     }

@@ -22,6 +22,7 @@ class PatientFactory extends Factory
             "address" => $this->faker->address(),
             "treatment_start_date" => $this->faker->dateTimeBetween($startDate = '-1 years', $endDate = 'now'),
             "vot" => $this->faker->boolean(),
+            "user_id" => $this->faker->randomElement([1,2,3,4]),
         ];
     }
 }

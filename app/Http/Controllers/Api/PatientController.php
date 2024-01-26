@@ -7,15 +7,18 @@ use App\Http\Requests\Patient\StorePatientRequest;
 use App\Http\Requests\Patient\UpdatePatientRequest;
 use App\Http\Resources\PatientResource;
 use App\Models\Patient;
+use Illuminate\Http\Request;
 
 class PatientController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        return PatientResource::collection(Patient::all());
+        $user_id = $request->user_id ?? auth()->id();
+        $data = Patient::where('user_id', $user_id)->get();
+        return PatientResource::collection($data);
     }
 
     /**
@@ -24,7 +27,7 @@ class PatientController extends Controller
     public function store(StorePatientRequest $request)
     {
         $patient = Patient::create($request->validated());
-
+        
         return PatientResource::make($patient);
     }
 
